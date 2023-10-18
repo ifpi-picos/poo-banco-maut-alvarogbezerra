@@ -17,18 +17,5 @@ public class Endereco {
         this.cep = cep;
     }
 
-    // Getters e Setters
-    
-    /* 
-    @Override
-    public String toString() {
-        return "Endereco{" +
-        "rua='" + rua + '\'' +
-        ", numero='" + numero + '\'' +
-        ", bairro='" + bairro + '\'' +
-        ", cidade='" + cidade + '\'' +
-        ", estado='" + estado + '\'' +
-        ", cep='" + cep + '\'' +
-        '}';
-    }*/
+ 
 }
