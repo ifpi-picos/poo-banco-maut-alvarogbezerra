@@ -3,13 +3,18 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import src.br.com.maut.clientes.atributos.Endereco;
-import src.br.com.maut.contas.atributos.DadosBase;
 
 public class Cliente {
-    private String email;
-    private String senha;
+    private String nome;
+    private final String cpf;
+    private LocalDate dataNascimento;
     private Endereco endereco;
-    private ArrayList <DadosBase> contas;
-
+    
+    public Cliente(String nome, String cpf, LocalDate dataNascimento, Endereco endereco) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
+    }
     
 }
