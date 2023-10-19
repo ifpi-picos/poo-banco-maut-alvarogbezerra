@@ -2,6 +2,7 @@ package src.br.com.maut.contas;
 
 import java.time.LocalDate;
 
+//Perguntar a Jesiel se devo remover essa classe ou não já que comentei o extrato
 public class Transacao {
     LocalDate data;
     double valor;
