@@ -1,13 +1,15 @@
 package src.br.com.maut.contas;
 
 import src.br.com.maut.clientes.Cliente;
+import src.br.com.maut.notificacao.Notificacao;
 
 public class ContaCorrente extends Conta{
     private double chequeEspecial;
+
     private int numeroDeTransacoes = 2;//O cliente pode fazer duas transações grátis
 
-    public ContaCorrente(Cliente titular, String tipoDeNotificacao) {
-        super(titular, tipoDeNotificacao);
+    public ContaCorrente(Cliente titular, Notificacao notificacao) {
+        super(titular, notificacao);
     }
 
     //Decrementa em 10% caso o numero permitido de transações seja superior a 2 conforme o requisito 9.
@@ -25,11 +27,17 @@ public class ContaCorrente extends Conta{
         } if (this.saldo < valor) {
             double aux = this.saldo - valor;
             this.chequeEspecial -= aux;
+            this.saldo = 0;
         }
         contaDestino.saldo += valor;
         cobraTaxa (valor);
-        //addextrato(valor, "transferência");
-        enviaNotificacao("Transferência", valor);
+        this.notificacao.enviaNotificacao("Transferência", valor);
+        getSaldo();
+        getChequeEspecial();
     }
 
+    public void getChequeEspecial() {
+        System.out.println("Você está usando o seguinte valor do cheque especial: " + this.chequeEspecial);
+    }
+    
 }

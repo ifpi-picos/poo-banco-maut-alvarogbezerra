@@ -1,6 +1,5 @@
 package src.br.com.maut.clientes;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import src.br.com.maut.clientes.atributos.Endereco;
 
